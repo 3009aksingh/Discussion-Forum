@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- <link href="style.css" rel="stylesheet" media="all" type="text/css" /> -->
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>Discussion App</title>
+  </head>
+  <body>
+    
+    <!-- ------------------------------BOOTSRAP ADDED--------------------------- -->
+    <ul>
+      <li>
+       <a href="/users/discussion1st"> <h3>Discussion Forum <i class="far fa-comments"></i></h3></a>
+      </li>
+      <li>
+        <!-- <a class="navbar" href="https://discusion-forum-akss.herokuapp.com/"
+            >Previously asked questions</a> -->
+     <a href="/users/discussion1st">   <button
+          type="button"
+          class="navbar btn btn-light btn-rounded"
+          
+        >
+          <b>Add new questions</b>
+        </button></a>
+      </li>
+      <li><a href="/users/discussion3rd">
+        <button
+          type="button"
+          class="navbar btn btn-light btn-rounded"
+          
+        >
+          <b> Add new response </b>
+        </button></a>
+      </li>
+    </ul>
+    <!-- ------------------------------BOOTSRAP ENDS -------------------------- -->
+    <div class="main-container">
+    <!-- ANKIT CHAT PART STARTS  -->
+    <div class="container">
+      <!-- <h3 class=" text-center">Messaging</h3> -->
+      <div class="messaging">
+            <div class="inbox_msg">
+              <div class="inbox_people">
+                <div class="headind_srch">
+                  <div class="recent_heading">
+                    <h4>Questions & Responses</h4>
+                  </div>
+                </div>
+                <div class="inbox_chat">
+                  <div class="chat_list active_chat">
+                    <div class="chat_people">
+                        <%sendresponsesList.forEach(sendresponse => {%>
+                      <div class="chat_img"> </div>
+                      <div class="chat_ib">
+                        <h5><strong><i class="fas fa-user-tie fa-3x"></i><%= sendresponse.name %></strong></h5>
+                        <p><b>Subject : </b><%= sendresponse.subject %></p>
+                        <p><b>Question : </b><%= sendresponse.question %></p>
+                        <p><b>Response : </b><%= sendresponse.response %></p>
+                        <hr>
+                      </div>
+                      <%})%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- ANKIT CHAT PART ENDS  -->
+    <!-- RIGHT PART OF WEB PAGE -->
+  </div>
+  </div>
+  </div>
+
+
+
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <!-- Twitter -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <!-- Google -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#"
+            role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <!-- Linkedin -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <!-- Github -->
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="#!"
+            role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="https://phcet.ac.in/#">PHCET</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <style>
+    /* BUTTON EFFECT */
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+
+* {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.inst{
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(0, 0, 0);   
+  /* THIS IS FOR INNER BOX COLOR OF INSTRUCTION */
+}
+
+.fas{
+  width: 50px;
+  
+}
+ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(51, 51, 51);
+        padding-top: 10px;
+        /* padding-bottom: 10px; */
+      }
+
+
+      li {
+        float: left;
+      }
+
+      
+      h3 {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        padding-right: 650px;
+        text-decoration: none;
+      }
+
+      .navbar {
+        /* padding-right: 20px; */
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+      .column {
+        height: 100px;
+      }
+
+ 
+      @media (min-width: 768px) {
+        .portlet {
+          margin-bottom: 30px;
+        }
+      }
+      div.main-container
+{
+    display: flex;
+}
+
+
+      .container-left {
+        width: 40%;
+        height: 100px;
+      
+        background: #eee;
+        min-height: 75.0vh;
+        box-shadow: 1px 0 1px 0 #ccc;
+        margin-top: 30px; 
+        margin-left: 10px;
+       
+        
+      }
+      /* CHAT PART BY ANKIT */
+      .container{max-width:1170px; margin-top: 50px; margin-right: 100px;}
+img{ max-width:100%;}
+.inbox_people {
+  background: #2e2a2a none repeat scroll 0 0;
+  float: left;
+  overflow: hidden;
+  width: 100%; 
+
+}
+.inbox_msg {
+  width:min-content;
+  width: 1170px;
+  
+  clear: both;
+  overflow: hidden;
+  box-shadow: 4px 4px 4px 4px #5e5959;
+}
+
+.headind_srch{ padding:10px 29px 10px 20px; overflow:hidden;}
+
+.recent_heading h4 {
+  color: #ffffff;
+  font-size: 21px;
+  margin: auto;
+}
+
+
+.chat_ib h5{ font-size:15px; color:#454745;margin:0 0 8px 0; }
+.chat_ib h5 span{ font-size:13px; float:right;}
+.chat_ib p{ font-size:14px; color:#790909; margin:auto} 
+/* THIS IS FOR COLOURING THE INNER TEXT OF THE QUESTION'S SECTION */
+
+.chat_ib {
+  float: left;
+  padding: 0 0 0 15px;
+  width: 88%;
+}
+
+.chat_people{ overflow:hidden; clear:both;}
+.chat_list {
+ 
+  margin: 0;
+  padding: 18px 16px 10px;
+}
+.inbox_chat { height: 450px; overflow-y: scroll;}
+
+.active_chat{ background:#f1dec8;}
+a{
+        text-decoration: none;
+      }
+    </style>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
