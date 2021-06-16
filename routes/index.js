@@ -10,7 +10,7 @@ const {ensureAuthenticated} = require('../config/auth')
 router.get('/', (req, res) => res.render('welcome')); //firstly welcome.ejs is executed.
 
 //dashboard
-router.get('/dashboard', ensureAuthenticated, (req, res) => res.render('dashboard', {
+router.get('/discussion1st', ensureAuthenticated, (req, res) => res.render('discussion1st', {
     name : req.user.name
 })); //protecting from directly going to dashboard without login
 

@@ -1,35 +1,110 @@
-<div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body">
-        <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
-        
-        <%- include ("./partials/messages"); %>
-        <form action="/users/login" method="POST">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter Email"
-            />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="form-control"
-              placeholder="Enter Password"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Login</button>
+<link
+  href="	https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <form action="/users/login" method="POST" class="box">
+          <h1>Login</h1>
+          <%- include ("./partials/messages"); %>
+          <p class="text-muted">Please enter your login and password!</p>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Enter Password"
+          />
+
+          <input type="submit" name="" value="Login" href="#" />
         </form>
-        <p class="lead mt-4">
-          No Account? <a href="/users/register">Register</a>
-        </p>
       </div>
     </div>
   </div>
+</div>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: rgb(243, 228, 219);
+  }
+
+  .card {
+    margin-bottom: 20px;
+    border: none;
+  }
+
+  .box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background: #191919;
+    box-shadow: 4px 4px 4px 4px rgb(44, 43, 43);
+    text-align: center;
+    transition: 0.25s;
+    margin: 165px 50px 50px 50px;
+  }
+
+  .box input[type="text"],
+  .box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+
+  .box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .box input[type="text"]:focus,
+  .box input[type="password"]:focus {
+    width: 300px;
+    border-color: #2ecc71;
+  }
+
+  .box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+
+  .box input[type="submit"]:hover {
+    background: #2ecc71;
+  }
+</style>

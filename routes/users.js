@@ -153,7 +153,7 @@ router.post('/register', (req, res) => {
 // Login
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/dashboard', //linking with our project Man! i.e. discussion forum
+    successRedirect: '/discussion1st', //linking with our project Man! i.e. discussion forum
     failureRedirect: '/users/login',
     failureFlash: true
   })(req, res, next);

@@ -37,26 +37,23 @@
   <body>
     <ul>
       <li>
-        <a href="/users/discussion1st"><h3>Discussion Forum <i class="far fa-comments"></i></h3></a>
+        <a href="/users/discussion1st"
+          ><h3>Discussion Forum <i class="far fa-comments"></i></h3
+        ></a>
       </li>
       <li>
-      <a href="/users/discussion1st"> <button
-          type="button"
-          class="navbar btn btn-light btn-rounded"
-          
+        <a href="/users/discussion1st">
+          <button type="button" class="navbar btn btn-light btn-rounded">
+            <b>Add new questions</b>
+          </button></a
         >
-          <b>Add new questions</b>
-        </button></a> 
       </li>
       <li>
         <a href="/users/discussion4th">
-        <button
-          type="button"
-          class="navbar btn btn-light btn-rounded"
-          
+          <button type="button" class="navbar btn btn-light btn-rounded">
+            <b> See responses </b>
+          </button></a
         >
-          <b> See responses </b>
-        </button></a>
       </li>
     </ul>
     <div class="main-container">
@@ -77,11 +74,11 @@
                     <div class="chat_ib">
                       <h5>
                         <strong
-                          ><i class="fas fa-user-tie fa-3x"></i>
-                          <%= settinquestion.name %></strong
+                          ><i class="fas fa-user-tie fa-3x"></i> <%=
+                          settinquestion.name %></strong
                         >
                       </h5>
-                      
+
                       <p><b>Subject : </b> <%= settinquestion.subject %></p>
                       <p><b>Question : </b> <%= settinquestion.question %></p>
                       <hr />
@@ -245,7 +242,7 @@
         margin-top: 10px;
         margin-right: 10px;
       }
-      
+
       div.main-container {
         display: flex;
       }
@@ -405,15 +402,13 @@
         background: #f1dec8;
       }
 
-      .mb-4{
+      .mb-4 {
         padding-left: 150px;
       }
 
-      a{
+      a {
         text-decoration: none;
       }
     </style>
-
-    
   </body>
 </html>
