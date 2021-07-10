@@ -35,12 +35,12 @@ router.use(
 router.get("/", (req, res) => {
     // check if user is logged in, by checking cookie
     let email = req.cookies.email;
-    const payload = "HELLO"
-    res.send(payload.repeat(1000000));
+    // const payload = "HELLO"
+    // res.send(payload.repeat(1000000));
     // render the home page
-    // return res.render("welcome", {
-    //     email,
-    // });
+    return res.render("welcome", {
+        email,
+    });
 });
 
 router.get("/discussion1st", ensureAuthenticated, (req, res) => {

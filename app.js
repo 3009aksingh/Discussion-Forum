@@ -1,4 +1,5 @@
 const express = require('express');
+const limitter = require('express-rate-limit')
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -19,6 +20,12 @@ app.use(express.urlencoded({
 }));
 //!!!!!!!!!!!!!!!
 
+app.use(
+  limitter({
+    windowMs: 5000,
+    max: 5,
+  })
+)
 
 
 // Passport Config

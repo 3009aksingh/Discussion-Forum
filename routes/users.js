@@ -61,7 +61,7 @@ router.use(
     threshold: 100 * 1000,
     filter: (req, res) => {
       if (req.header['x-no-compression']) {
-        return false
+        return false;
       }
       return compression.filter(req, res)
     }
