@@ -4,8 +4,20 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
-
 const app = express();
+
+
+//!Setting cookies for login form : 
+
+const helmet = require("helmet");
+const cookieparser = require("cookie-parser");
+app.use(helmet());
+app.use(cookieparser());
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: false
+}));
+//!!!!!!!!!!!!!!!
 
 // Passport Config
 require('./config/passport')(passport);
@@ -16,12 +28,14 @@ const db = require('./config/keys').mongoURI;
 // Connect to MongoDB
 mongoose
   .connect(
-    db,
-    { useNewUrlParser: true, useUnifiedTopology: true }
+    db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
   )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
-  console.log("3");
+console.log("3");
 
 // EJS
 app.use(expressLayouts);
@@ -55,7 +69,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 // Routes -> connecting with users.js 
 app.use('/users', require('./routes/users.js'));

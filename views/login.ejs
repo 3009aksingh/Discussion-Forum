@@ -1,8 +1,5 @@
-<link
-  href="	https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  rel="stylesheet"
-  id="bootstrap-css"
-/>
+<link href="	https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+  id="bootstrap-css" />
 
 <div class="container">
   <div class="row">
@@ -10,8 +7,11 @@
       <div class="card">
         <form action="/users/login" method="POST" class="box">
           <h1>Login</h1>
+          <% if(locals.error) {%>
           <%- include ("./partials/messages"); %>
-          <p class="text-muted">Please enter your login and password!</p>
+          <!-- <p class="text-muted">Please enter your login and password! </p> -->
+          <p class="text-danger"></p>
+          <%}%>
           <input
             type="text"
             id="email"
@@ -28,7 +28,11 @@
           />
 
           <input type="submit" name="" value="Login" href="#" />
+          <p class="text-muted">
+            Don't have An Account? <a href="/users/register">Register</a>
+          </p>
         </form>
+      
       </div>
     </div>
   </div>
