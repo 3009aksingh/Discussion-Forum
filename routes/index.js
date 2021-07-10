@@ -7,7 +7,7 @@ const router = express.Router(); //common
 const {
     ensureAuthenticated
 } = require('../config/auth')
-
+const compression = require('compression')
 //welcome page -> for rendering welcome.ejs file
 // ??router.get('/', (req, res) => res.render('welcome')); //firstly welcome.ejs is executed.
 const helmet = require("helmet");
@@ -19,14 +19,28 @@ router.use(express.urlencoded({
     extended: false
 }));
 
+router.use(
+    compression({
+        level: 6,
+        threshold: 100 * 1000,
+        filter: (req, res) => {
+            if (req.header['x-no-compression']) {
+                return false
+            }
+            return compression.filter(req, res)
+        }
+    })
+)
+
 router.get("/", (req, res) => {
     // check if user is logged in, by checking cookie
     let email = req.cookies.email;
-
+    const payload = "HELLO"
+    res.send(payload.repeat(1000000));
     // render the home page
-    return res.render("welcome", {
-        email,
-    });
+    // return res.render("welcome", {
+    //     email,
+    // });
 });
 
 router.get("/discussion1st", ensureAuthenticated, (req, res) => {

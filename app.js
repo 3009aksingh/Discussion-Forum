@@ -5,7 +5,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const app = express();
-
+const compression = require('compression')
 
 //!Setting cookies for login form : 
 
@@ -18,6 +18,8 @@ app.use(express.urlencoded({
   extended: false
 }));
 //!!!!!!!!!!!!!!!
+
+
 
 // Passport Config
 require('./config/passport')(passport);

@@ -54,6 +54,21 @@ router.get('/discussion2nd', (req, res) => {
   })
 })
 
+const compression = require('compression')
+router.use(
+  compression({
+    level: 6,
+    threshold: 100 * 1000,
+    filter: (req, res) => {
+      if (req.header['x-no-compression']) {
+        return false
+      }
+      return compression.filter(req, res)
+    }
+  })
+)
+
+
 //LOGIN PAGE -> for rendering login.ejs
 // ?router.get('/login', (req, res) => res.render('login'));
 router.get("/login", (req, res) => {
