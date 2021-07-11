@@ -13,32 +13,31 @@
   </div>
 </div>
 <div class="main">
-  <div class="col-md-4 col-sm-12"><br>
-
+  <div class="col-md-4 col-sm-12">
+    <br />
     <%if(locals.email){%>
     <p>You are logged in as <%=email%></p>
     <a href="/users/discussion1st">
-      <button style="height: 80px; width: 750px" type="submit" class="btn btn-secondary">
+      <button style="height: 80px; width: 350px; margin-top: 50px" type="submit" class="btn btn-secondary">
         Go to discussion forum
       </button>
-    </a> <br><br>
+    </a>
+    <br /><br />
     <a href="/users/logout">
-      <button style="height: 80px; width: 750px" type="submit" class="btn btn-black">
+      <button style="height: 80px; width: 350px" type="submit" class="btn btn-black">
         Logout
       </button>
     </a>
     <%} else { %>
-
     <div class="login-form">
       <a href="/users/login">
-        <button style="height: 80px; width: 750px" type="submit" class="btn btn-black">
+        <button style="height: 80px; width: 350px; margin-top: 50px" type="submit" class="btn btn-black">
           Login
         </button>
       </a>
-
       <br /><br /><br />
       <a href="/users/register">
-        <button style="height: 80px; width: 750px" type="submit" class="btn btn-secondary">
+        <button style="height: 80px; width: 350px" type="submit" class="btn btn-secondary">
           Register
         </button>
       </a>
@@ -48,10 +47,10 @@
 </div>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 
   * {
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
   }
 
   .btn {
