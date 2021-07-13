@@ -1,13 +1,18 @@
 const express = require('express');
+
 const mongoose = require('mongoose');
 const router = express.Router();
+var assert = require("assert");
 const bcrypt = require('bcryptjs');
 //user model
+var mongo = require("mongodb").MongoClient;
 const User = require('../models/User')
 const passport = require('passport');
 const sendResponse = require('../models/sendResponse');
+var ObjectID = require('mongodb').ObjectID;
 //load user model
 const settingQuestion = require('../models/settingQuestion');
+var url = 'mongodb+srv://ankit:ankita@cluster0.5bzmb.mongodb.net/DiscussionForum?retryWrites=true&w=majority'
 
 //! cookie settings
 
@@ -24,14 +29,16 @@ router.use(express.urlencoded({
 const settinquestionsSchema = {
   name: String, //moviesSchema = settinquestionsSchema
   subject: String,
-  question: String
+  question: String,
+  _id: Object
 }
 
 const sendresponsesSchema = {
   name: String, //moviesSchema = settinquestionsSchema
   subject: String,
   question: String,
-  response: String
+  response: String,
+  _id: Object
 }
 
 const sendresponse = mongoose.model('sendresponse', sendresponsesSchema);
@@ -68,6 +75,7 @@ router.use(
   })
 )
 
+router.get('/delete', (req, res) => res.render('delete'));
 
 //LOGIN PAGE -> for rendering login.ejs
 // ?router.get('/login', (req, res) => res.render('login'));
@@ -89,6 +97,16 @@ router.get("/login", (req, res) => {
 //Register page -> for rendering register.ejs
 router.get('/register', (req, res) => res.render('register'));
 
+router.get('/Admin2ndDiscuss', (req, res) => {
+  settinquestion.find({}, function (err, settinquestions) {
+    res.render('Admin2ndDiscuss', {
+      settinquestionsList: settinquestions
+    })
+  })
+})
+
+router.get('/Admin4thDiscuss', (req, res) => res.render('Admin4thDiscuss'));
+
 //calling discussion forum 1st page 
 // ? router.get('/discussion1st', (req, res) => res.render('discussion1st'));
 router.get("/discussion1st", (req, res) => {
@@ -104,6 +122,107 @@ router.get("/discussion1st", (req, res) => {
 
 router.get('/discussion3rd', (req, res) => res.render('discussion3rd'));
 //post request for 1st page of discussion forum used for question intake.
+
+// router.get('/deleteQuestions', (req, res) => res.render('delete'));
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+router.post("/deleteQuestions", (req, res, next) => {
+
+  console.log("Log user 17");
+  const question = req.body.question;
+  console.log(question);
+  // const questionaire = JSON.stringify(question);
+
+  // const csrfToken = "";
+  mongo.connect(
+    url, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true
+    },
+    function (error, client) {
+      console.log("Log user 18");
+      assert.strictEqual(null, error);
+      console.log("Log user 19");
+      const db = client.db("DiscussionForum");
+
+      db.collection("settinquestions").findOneAndDelete({
+          _id: ObjectID(question)
+        },
+        function (error, result) {
+
+
+          console.log("Log user 20");
+          assert.strictEqual(null, error);
+          console.log("Item deleted");
+          // res.redirect("/poll/vote");
+          console.log("Log user 21");
+          client.close();
+        }
+      );
+    }
+  );
+  console.log("Log user 15");
+  res.redirect("/users/delete");
+});
+
+
+
+router.post("/deleteResponses", (req, res, next) => {
+
+  console.log("Log user 17");
+  const response = req.body.response;
+  console.log(response);
+  // const questionaire = JSON.stringify(question);
+
+  // const csrfToken = "";
+  mongo.connect(
+    url, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true
+    },
+    function (error, client) {
+      console.log("Log user 18");
+      assert.strictEqual(null, error);
+      console.log("Log user 19");
+      const db = client.db("DiscussionForum");
+
+      db.collection("sendresponses").findOneAndDelete({
+          _id: ObjectID(response)
+        },
+        function (error, result) {
+
+
+          console.log("Log user 20");
+          assert.strictEqual(null, error);
+          console.log("Item deleted");
+          // res.redirect("/poll/vote");
+          console.log("Log user 21");
+          client.close();
+        }
+      );
+    }
+  );
+  console.log("Log user 15");
+  res.redirect("/users/delete");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 router.post("/discussion1st", async (req, res) => { //   changed /index to whatever
   try {

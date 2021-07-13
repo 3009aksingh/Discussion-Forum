@@ -3,22 +3,27 @@ const mongoose = require("mongoose");
 
 //schema for settingQuestion ( present on 1st page of discussion forum )
 const settingQuestionSchema = mongoose.Schema({
-    name : {
-        type : String,
-        require : true,
-        minLength : 3
+    name: {
+        type: String,
+        require: true,
+        minLength: 3
     },
-    subject : {
-        type : String,
-        require : true,
-        minLength : 3
+    subject: {
+        type: String,
+        require: true,
+        minLength: 3
     },
 
-    question : {
-        type : String,
-        require : true,
-        minLength : 3
-    }
+    question: {
+        type: String,
+        require: true,
+        minLength: 3
+    },
+
+    // _id: [{
+    //     type: Object,
+    //     require: false
+    // }]
 
 })
 

@@ -5,29 +5,33 @@ const mongoose = require("mongoose");
 //schema for sendResponse collection present in database
 const sendResponseSchema = mongoose.Schema({
 
-    name : {
-        type : String,
-        require : true,
-        minLength : 3
+    name: {
+        type: String,
+        require: true,
+        minLength: 3
     },
 
-    subject : {
-        type : String,
-        require : true,
-        minLength : 3
+    subject: {
+        type: String,
+        require: true,
+        minLength: 3
     },
 
-    question : {
-        type : String,
-        require : true,
-        minLength : 3
+    question: {
+        type: String,
+        require: true,
+        minLength: 3
     },
 
-    response : {
-        type : String,
-        require : true,
-        minLength : 3
-    }
+    response: {
+        type: String,
+        require: true,
+        minLength: 3
+    },
+    // _id: [{
+    //     type: Object,
+    //     require: false
+    // }]
 
 })
 
