@@ -23,7 +23,7 @@ app.use(express.urlencoded({
 app.use(
   limitter({
     windowMs: 5000,
-    max: 5,
+    max: 25,
   })
 )
 
