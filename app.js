@@ -7,8 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const app = express();
 const dotenv = require('dotenv').config();
-const compression = require('compression')
-
+const compression = require('compression');
 const helmet = require("helmet");
 const cookieparser = require("cookie-parser");
 app.use(helmet());
