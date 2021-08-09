@@ -7,15 +7,11 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const app = express();
 const dotenv = require('dotenv').config();
-<<<<<<< HEAD
-const compression = require('compression');
-=======
 const compression = require('compression')
 
 //!Setting cookies for login form : 
 console.log(dotenv.parsed);
 
->>>>>>> parent of eecfc5e... edits
 const helmet = require("helmet");
 const cookieparser = require("cookie-parser");
 app.use(helmet());
