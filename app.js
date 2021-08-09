@@ -10,7 +10,7 @@ const dotenv = require('dotenv').config();
 const compression = require('compression')
 
 //!Setting cookies for login form : 
-console.log(dotenv.parsed);
+// console.log(dotenv.parsed);
 
 const helmet = require("helmet");
 const cookieparser = require("cookie-parser");
@@ -44,7 +44,7 @@ mongoose
       useUnifiedTopology: true
     }
   )
-  .then(() => console.log('MongoDB Connected'))
+  .then(() => console.log('MongoDB Connected 🚀'))
   .catch(err => console.log(err));
 
 
@@ -90,7 +90,7 @@ app.use('/', require('./routes/index.js'));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on  ${PORT}`);
+  console.log(`Server running on  ${PORT} 😄 🤲 `);
 })
 
 //first welcom.ejs is executed via index.js because in package.json , main : index.js
