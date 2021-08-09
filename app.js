@@ -7,7 +7,15 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const app = express();
 const dotenv = require('dotenv').config();
+<<<<<<< HEAD
 const compression = require('compression');
+=======
+const compression = require('compression')
+
+//!Setting cookies for login form : 
+console.log(dotenv.parsed);
+
+>>>>>>> parent of eecfc5e... edits
 const helmet = require("helmet");
 const cookieparser = require("cookie-parser");
 app.use(helmet());
@@ -39,7 +47,7 @@ mongoose
       useUnifiedTopology: true
     }
   )
-  .then(() => console.log('MongoDB Connected 🚀'))
+  .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
 
@@ -81,7 +89,7 @@ app.use('/', require('./routes/index.js'));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on  ${PORT} 😄 🤲 `);
+  console.log(`Server running on  ${PORT}`);
 })
 
 //first welcom.ejs is executed via index.js because in package.json , main : index.js
