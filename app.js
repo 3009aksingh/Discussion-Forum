@@ -80,7 +80,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-// app.use(express.urlencoded({ extended: false }));
+
 
 // Routes -> connecting with users.js 
 app.use('/users', require('./routes/users.js'));
