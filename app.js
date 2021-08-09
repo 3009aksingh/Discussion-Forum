@@ -47,8 +47,6 @@ mongoose
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
-//body parser
-
 // Express session
 app.use(
   session({
