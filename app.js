@@ -47,7 +47,6 @@ mongoose
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
-// Express session
 app.use(
   session({
     secret: 'secret',
