@@ -12,8 +12,9 @@ const sendResponse = require('../models/sendResponse');
 var ObjectID = require('mongodb').ObjectID;
 //load user model
 const settingQuestion = require('../models/settingQuestion');
-var url = 'mongodb+srv://ankit:ankita@cluster0.5bzmb.mongodb.net/DiscussionForum?retryWrites=true&w=majority'
-
+var url = process.env.DB_MONGODDB_URI;
+const dotenv = require('dotenv');
+dotenv.config();
 //! cookie settings
 
 const helmet = require("helmet");
