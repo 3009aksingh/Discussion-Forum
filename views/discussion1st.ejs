@@ -16,41 +16,42 @@
   <title>Document</title>
 </head>
 
+
 <body>
   <ul>
     <li>
-      <a class="design" href="/users/discussion1st">
+      <a class="design" href="/">
         <h3>Discussion Forum <i class="far fa-comments"></i></h3>
       </a>
     </li>
 
     <%if(locals.email){%>
 
-    <li>
+    <li style="float: right">
       <a href="/users/delete"><button type="button" class="navbar btn btn-light btn-rounded">
           <b>Delete Questions OR Responses</b>
         </button></a>
     </li>
 
-    <li>
+    <li style="float: right">
       <a href="/users/logout"><button type="button" class="navbar btn btn-light btn-rounded">
           <b>Logout</b>
         </button></a>
     </li>
   </ul>
   <%} else { %>
-  <li>
+  <li style="float: right">
     <a href="/users/discussion2nd"><button type="button" class="navbar btn btn-light btn-rounded">
         <b>Previously asked questions</b>
       </button></a>
   </li>
-
+  </ul>
   <% } %>
   <div class="container">
     <div class="col-md-6 mx-auto text-center">
       <div class="header-title">
-        <h1 class="wv-heading--title">Welcome to Discussion Forum!</h1><br><br>
-
+        <h1 class="wv-heading--title">Welcome to Discussion Forum!</h1>
+        <br />
         <h2 class="wv-heading--subtitle">
           Enter your question, we will be happy to answer you
           <i class="fab fa-angellist"></i>
@@ -63,7 +64,7 @@
           <form id="formAdd" action="/users/discussion1st" method="POST">
             <div class="form-group">
               <input type="text" name="name" class="subject form-control my-input" placeholder="Enter your name"
-                required="required" /><br />
+                required="required" />
             </div>
             <div class="form-group">
               <input type="text" name="subject" class="subject form-control my-input" placeholder="Subject"
@@ -122,12 +123,24 @@
     </div>
     <!-- Copyright -->
   </footer>
-
+  <script>
+    function preventBack() {
+      window.history.forward();
+    }
+    setTimeout('preventBack()', 0);
+    window.onunload = function () {
+      null;
+    };
+  </script>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 
     * {
-      font-family: "Montserrat Alternates", sans-serif;
+      font-family: 'Montserrat Alternates', sans-serif;
+    }
+
+    body {
+      background-color: #f5eceb;
     }
 
     /* footer {
@@ -141,8 +154,8 @@
       padding: 8px 25px;
     }
 
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
@@ -165,7 +178,7 @@
     }
 
     .header-title {
-      margin: 5rem 0;
+      margin: 1rem 0;
     }
 
     h1 {
@@ -240,7 +253,6 @@
       color: white;
       text-align: center;
       padding: 14px;
-      padding-right: 670px;
       text-decoration: none;
     }
 
@@ -266,15 +278,7 @@
     }
   </style>
   <!-- MDB -->
-  <script>
-    function preventBack() {
-      window.history.forward();
-    }
-    setTimeout("preventBack()", 0);
-    window.onunload = function () {
-      null
-    };
-  </script>
+
 </body>
 
 </html>
