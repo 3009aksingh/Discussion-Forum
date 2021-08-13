@@ -35,7 +35,7 @@ npm run dev
 👤 **Ankit**
 
 * Website: https://ankit-singh-portfolio.herokuapp.com/
-* Twitter: [@aksingh\\_2000](https://twitter.com/aksingh\\_2000)
+* Twitter: [@aksingh\\_2000](https://twitter.com/aksingh\\2000)
 * Github: [@3009aksingh](https://github.com/3009aksingh)
 * LinkedIn: [@ankitkumarsingh3009](https://linkedin.com/in/ankitkumarsingh3009)
 
