@@ -9,7 +9,10 @@
   </a>
 </p>
 
-> This question answer platform is a dynamic website , which simulates the basic functioning of the famous website Quora.
+> This question answer platform is a dynamic website , which simulates the basic functioning of the famous website Quora.Created an interactive web application which focuses on providing the most efficient way to solve
+your queries or solution using simple ways. Technologies used NodeJS, Express, EJS, MongoDB. Worked on CRUD
+API’s for MongoDB and connected them to EJS Frontend. Authenticated using login and registration forms,worked with
+cookies and session for ease in login management and realtime file sharing feature
 
 ### 🏠 [Homepage](https://discus-app.herokuapp.com/)
 
